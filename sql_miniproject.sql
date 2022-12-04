@@ -5,9 +5,9 @@ CREATE TABLE Trader (
 	Email  VARCHAR(100) NOT NULL,
 	Phone_Number VARCHAR(15) NOT NULL,
 	Cellphone_Number VARCHAR(15) NOT NULL,
-	Tier VARCHAR(10) NOT NULL DEFAULT "Silver",
 	Ethereum_Amount FLOAT NOT NULL DEFAULT 0.0,
 	Ethereum_Address VARCHAR(100) UNIQUE NOT NULL,
+	Tier VARCHAR(10) NOT NULL DEFAULT "Silver",
 
 	PRIMARY KEY (Trader_ID)
 );
@@ -33,12 +33,14 @@ CREATE TABLE Credentials(
 );
 
 CREATE TABLE NFT(
-	Token_ID VARCHAR(256) NOT NULL,
+	Token_ID VARCHAR(256) NOT NULL AUTO_INCREMENT,
 	NFT_Name VARCHAR(100) NOT NULL,
 	Smart_Contract_Address VARCHAR(255) NOT NULL,
+	Market_Price_Ethereum FLOAT NOT NULL,
 
 	PRIMARY KEY (Token_ID)
 );
+ALTER TABLE NFT AUTO_INCREMENT=2000
 
 CREATE TABLE Owned_NFT(
 	Trader_ID INT NOT NULL,
@@ -56,7 +58,7 @@ CREATE TABLE Owned_NFT(
 );
 
 CREATE TABLE Payment(
-	Payment_ID VARCHAR(50) NOT NULL,
+	Payment_ID INT NOT NULL AUTO_INCREMENT,
 	Amount_Paid FLOAT NOT NULL,
 	Payment_Address_Ethereum VARCHAR(100),
 	Payment_Address_Bank VARCHAR(100),
@@ -70,6 +72,7 @@ CREATE TABLE Payment(
 	-- If payment done in USD, convert to Ethereum based on current market
 	-- exchange and update Trader(Ethereum_Amount)
 );
+ALTER TABLE Payment AUTO_INCREMENT=70000;
 
 CREATE TABLE Transaction(
 	Transaction_ID INT NOT NULL AUTO_INCREMENT,
