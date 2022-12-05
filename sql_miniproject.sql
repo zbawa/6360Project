@@ -37,6 +37,7 @@ CREATE TABLE NFT(
 	NFT_Name VARCHAR(100) NOT NULL,
 	Smart_Contract_Address VARCHAR(255) NOT NULL,
 	Market_Price_Ethereum FLOAT NOT NULL,
+	Unique(Token_ID, Smart_Contract_Address)
 
 	PRIMARY KEY (Token_ID)
 );
@@ -80,7 +81,7 @@ CREATE TABLE Transaction(
 	Transaction_Date datetime DEFAULT CURRENT_TIMESTAMP,
 	Commission_Paid FLOAT NOT NULL,
 	Commission_Type VARCHAR(10) NOT NULL,
-	NFT_Token_ID VARCHAR(256) NOT NULL,
+	NFT_Token_ID INT NOT NULL,
 	NFT_Address VARCHAR(255) NOT NULL,
 	Seller_Ethereum_Address VARCHAR(100) NOT NULL,
 	Buyer_Ethereum_Address VARCHAR(100) NOT NULL,
