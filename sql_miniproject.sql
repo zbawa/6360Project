@@ -26,7 +26,7 @@ CREATE TABLE Address(
 
 CREATE TABLE Credentials(
 	Trader_ID INT NOT NULL,
-	Pasword VARCHAR(100) NOT NULL,
+	Password VARCHAR(100) NOT NULL,
 
 	PRIMARY KEY (Trader_ID),
 	FOREIGN KEY (Trader_ID) REFERENCES Trader(Trader_ID)
