@@ -40,7 +40,7 @@ CREATE TABLE NFT(
 
 	PRIMARY KEY (Token_ID)
 );
-ALTER TABLE NFT AUTO_INCREMENT=2000
+ALTER TABLE NFT AUTO_INCREMENT=2001
 
 CREATE TABLE Owned_NFT(
 	Trader_ID INT NOT NULL,
@@ -72,7 +72,7 @@ CREATE TABLE Payment(
 	-- If payment done in USD, convert to Ethereum based on current market
 	-- exchange and update Trader(Ethereum_Amount)
 );
-ALTER TABLE Payment AUTO_INCREMENT=70000;
+ALTER TABLE Payment AUTO_INCREMENT=70001;
 
 CREATE TABLE Transaction(
 	Transaction_ID INT NOT NULL AUTO_INCREMENT,
@@ -91,7 +91,7 @@ CREATE TABLE Transaction(
 	FOREIGN KEY (Buyer_Ethereum_Address) REFERENCES Trader(Ethereum_Address)
 );
 
-ALTER TABLE Transaction AUTO_INCREMENT=70000;
+ALTER TABLE Transaction AUTO_INCREMENT=70001;
 -- Transaction_ID and Trader_ID start with different intial counters so as to avoid any
 -- collission among them
 
