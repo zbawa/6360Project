@@ -36,7 +36,7 @@ INSERT INTO Credentials(Trader_id, Password) VALUES
 
 -------------------------------------------------------
 
-INSERT INTO NFT(Name, Smart_Contract_Address, Market_Price_Ethereum) VALUES
+INSERT INTO NFT(NFT_Name, Smart_Contract_Address, Market_Price_Ethereum) VALUES
 	('Artscape','0xC0DBF08d11AF53eb124196de13E3cFBab9B0a6c5',10000),
 	('Artholic','0xDec2E8F87bD7A40DFFb6b938E3CB5bd22a4eEA27',20000),
 	('Artex','0xd6Fdf78bfDF0bd2D7af307B4DbeABEeD9dDAb2B1',13000),
