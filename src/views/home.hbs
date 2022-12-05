@@ -12,6 +12,7 @@
     <title>Dashboard</title>
 
     <!-- Custom fonts for this template-->
+    <!-- Custom fonts for this template-->
     <link href="../../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
@@ -211,8 +212,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="../../assets/img/undraw_profile_3.svg"
-                                            alt="...">
+                                        <img class="rounded-circle" src="../assets/img/undraw_profile_3.svg" alt="...">
                                         <div class="status-indicator bg-warning"></div>
                                     </div>
                                     <div>
@@ -223,7 +223,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
+                                        <img class="rounded-circle" src="../../assets/img/undraw_profile_3.svg"
                                             alt="...">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
@@ -243,7 +243,8 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{trader1.fName}}
+                                    {{trader1.lName}}</span>
                                 <img class="img-profile rounded-circle" src="../../assets/img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
@@ -287,15 +288,15 @@
                     <!-- Content Row -->
                     <div class="row">
 
-                         <!-- Earnings (Monthly) Card Example -->
-                         <div class="col-xl-3 col-md-6 mb-4">
+                        <!-- Earnings (Monthly) Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-success shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 Wallet</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{trader1.wallet}}</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -361,7 +362,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                                 Current Status</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">Silver</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{trader1.tier}}</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-comments fa-2x text-gray-300"></i>
@@ -425,32 +426,33 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>1</td>
-                                                <td>NFT Test 1</td>
-                                                <td>1290</td>
-                                                <td>1</td>
+                                                <td>{{trader1.nftTokenID}}</td>
+                                                <td>{{trader1.nftName}}</td>
+                                                <td>{{trader1.usdPrice}}</td>
+                                                <td>{{trader1.ethPrice}}</td>
                                             </tr>
                                             <tr>
-                                                <td>2</td>
-                                                <td>NFT Test 2</td>
-                                                <td>645.13</td>
-                                                <td>0.5</td>
+                                                <td>{{trader1.nftTokenID}}</td>
+                                                <td>{{trader1.nftName}}</td>
+                                                <td>{{trader1.usdPrice}}</td>
+                                                <td>{{trader1.ethPrice}}</td>
                                             </tr>
                                             <tr>
-                                                <td>3</td>
-                                                <td>NFT Test 3</td>
-                                                <td>322.56</td>
-                                                <td>0.25</td>
+                                                <td>{{trader1.nftTokenID}}</td>
+                                                <td>{{trader1.nftName}}</td>
+                                                <td>{{trader1.usdPrice}}</td>
+                                                <td>{{trader1.ethPrice}}</td>
                                             </tr>
                                             <tr>
-                                                <td>4</td>
-                                                <td>NFT Test 4</td>
-                                                <td>2580.52</td>
-                                                <td>2</td>
+                                                <td>{{trader1.nftTokenID}}</td>
+                                                <td>{{trader1.nftName}}</td>
+                                                <td>{{trader1.usdPrice}}</td>
+                                                <td>{{trader1.ethPrice}}</td>
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <a href="../available-nfts/available-nfts.html" class="btn btn-success btn-icon-split">
+                                    <a href="../available-nfts/available-nfts.html"
+                                        class="btn btn-success btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-cart-plus"></i>
                                         </span>
@@ -528,7 +530,7 @@
 
     <!-- Page level custom scripts -->
     <script src="../demo/chart-area-demo.js"></script>
-    
+
     <!-- Page level custom scripts -->
     <script src="../demo/datatables-demo.js"></script>
 
