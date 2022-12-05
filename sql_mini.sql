@@ -69,7 +69,7 @@ INSERT INTO Owned_NFT(Trader_id, NFT_Token_ID, NFT_Name, Market_Price_Ethereum, 
 	(1008,2011,'Flames',37000,0),
 	(1006,2005,'Cosmos Graphic',60000,0),
 	(1001,2007,'Icon',12000,0),
-	(1009,2010,'CyberChads',40000,0)
+	(1009,2010,'CyberChads',40000,0),
 	(1002,2012,'Vs',31000,0);
 
 -------------------------------------------------------
