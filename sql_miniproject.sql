@@ -26,25 +26,26 @@ CREATE TABLE Address(
 
 CREATE TABLE Credentials(
 	Trader_ID INT NOT NULL,
-	Pasword VARCHAR(100) NOT NULL,
+	Password VARCHAR(100) NOT NULL,
 
 	PRIMARY KEY (Trader_ID),
 	FOREIGN KEY (Trader_ID) REFERENCES Trader(Trader_ID)
 );
 
 CREATE TABLE NFT(
-	Token_ID VARCHAR(256) NOT NULL AUTO_INCREMENT,
+	Token_ID INT NOT NULL AUTO_INCREMENT,
 	NFT_Name VARCHAR(100) NOT NULL,
 	Smart_Contract_Address VARCHAR(255) NOT NULL,
 	Market_Price_Ethereum FLOAT NOT NULL,
+	Unique(Token_ID, Smart_Contract_Address),
 
 	PRIMARY KEY (Token_ID)
 );
-ALTER TABLE NFT AUTO_INCREMENT=2000
+ALTER TABLE NFT AUTO_INCREMENT=2001
 
 CREATE TABLE Owned_NFT(
 	Trader_ID INT NOT NULL,
-	NFT_Token_ID VARCHAR(256) NOT NULL,
+	NFT_Token_ID INT NOT NULL,
 	NFT_Name VARCHAR(100) NOT NULL,
 	Market_Price_Ethereum FLOAT NOT NULL,
 	Market_Price_USD FLOAT NOT NULL,
@@ -72,7 +73,7 @@ CREATE TABLE Payment(
 	-- If payment done in USD, convert to Ethereum based on current market
 	-- exchange and update Trader(Ethereum_Amount)
 );
-ALTER TABLE Payment AUTO_INCREMENT=70000;
+ALTER TABLE Payment AUTO_INCREMENT=70001;
 
 CREATE TABLE Transaction(
 	Transaction_ID INT NOT NULL AUTO_INCREMENT,
@@ -80,7 +81,7 @@ CREATE TABLE Transaction(
 	Transaction_Date datetime DEFAULT CURRENT_TIMESTAMP,
 	Commission_Paid FLOAT NOT NULL,
 	Commission_Type VARCHAR(10) NOT NULL,
-	NFT_Token_ID VARCHAR(256) NOT NULL,
+	NFT_Token_ID INT NOT NULL,
 	NFT_Address VARCHAR(255) NOT NULL,
 	Seller_Ethereum_Address VARCHAR(100) NOT NULL,
 	Buyer_Ethereum_Address VARCHAR(100) NOT NULL,
@@ -91,7 +92,7 @@ CREATE TABLE Transaction(
 	FOREIGN KEY (Buyer_Ethereum_Address) REFERENCES Trader(Ethereum_Address)
 );
 
-ALTER TABLE Transaction AUTO_INCREMENT=70000;
+ALTER TABLE Transaction AUTO_INCREMENT=70001;
 -- Transaction_ID and Trader_ID start with different intial counters so as to avoid any
 -- collission among them
 
