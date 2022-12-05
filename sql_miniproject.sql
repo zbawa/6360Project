@@ -117,7 +117,7 @@ CREATE TABLE Deleted_Transaction(
 
 CREATE TABLE Transaction_Log (
 	Trader_ID INT NOT NULL,
-	NFT_Token_ID VARCHAR(256) NOT NULL,
+	NFT_Token_ID INT NOT NULL,
 	Transaction_ID INT NOT NULL,
 
 	PRIMARY KEY(Trader_ID, NFT_Token_ID, Transaction_ID),
