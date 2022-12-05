@@ -102,7 +102,7 @@ CREATE TABLE Deleted_Transaction(
 	Transaction_Date datetime,
 	Commission_Paid FLOAT NOT NULL,
 	Commission_Type VARCHAR(10) NOT NULL,
-	NFT_Token_ID VARCHAR(256) NOT NULL,
+	NFT_Token_ID INT NOT NULL,
 	NFT_Address VARCHAR(255) NOT NULL,
 	Seller_Ethereum_Address VARCHAR(100) NOT NULL,
 	Buyer_Ethereum_Address VARCHAR(100) NOT NULL,
