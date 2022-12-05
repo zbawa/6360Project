@@ -10,11 +10,11 @@ INSERT INTO Trader(First_Name, Last_Name, Email, Phone_Number, Cellphone_Number,
 	('Morgan', 'Shepard', 'morganshepard868@gmail.com', '471577382','613690628',1288.0,'0x25cB3b8de724E98d8d5dbE323FDf0CFD1fF77Df2','Silver'),
 	('Sachin', 'Coffey', 'sachincoffey954@gmail.com', '923225250','950631217',1321.4,'0x62b27fEBda0FCAF9F9cC8Bd476cFeaFa5f5D37eC','Silver'),
 	('Laiba', 'Salinas', 'laibasalinas643@gmail.com', '825438198','583240158',317.9,'0xfdF0C3102a80dAD04d00acBa5A85BBFc30e6563B','Silver'),
-	('Marshall', 'Coleman', 'marshallcoleman592@gmail.com', '630695940','518248856',1845.5,'0xd39dEE6Ef9daA18f2cdED6EC3fcF34143Ee2EeDa''Silver'),
+	('Marshall', 'Coleman', 'marshallcoleman592@gmail.com', '630695940','518248856',1845.5,'0xd39dEE6Ef9daA18f2cdED6EC3fcF34143Ee2EeDa','Silver'),
 	('Maisy', 'Hurst', 'maisyhurst627@gmail.com', '656485986','726369949',1045.1,'0xD1C923C3D6Fe11886A67C4bCDF05d97a04912d36','Silver'),
 	('Maria', 'Solomon', 'mariasolomon757@gmail.com', '868017791','588257406',798.3,'0x2eacCDf04bFBFeA8a5fFD69D7da8dEcB7BECC6Fd','Silver'),
 	('Shane', 'Waller', 'shanewaller771@gmail.com', '966317428','790698603',1216.0,'0xe260A15573f8F3D1f9BaAC82Aa0FF1eECAc9C1Cc','Silver'),
-	('Tess', 'Newman', 'tessnewman953@gmail.com', '792778473','692169514',2449.6,'0x4c6fD6eaBABBD5D0Dfa6eB1a45A2D9cd5A964Aed''Silver');
+	('Tess', 'Newman', 'tessnewman953@gmail.com', '792778473','692169514',2449.6,'0x4c6fD6eaBABBD5D0Dfa6eB1a45A2D9cd5A964Aed','Silver');
 
 -- NOTE : Ethereum_Amount is given in Ethers - make sure to convert it to USD using current market conversion rate
 
