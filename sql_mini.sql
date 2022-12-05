@@ -22,7 +22,7 @@ INSERT INTO Trader(First_Name, Last_Name, Email, Phone_Number, Cellphone_Number,
 
 -------------------------------------------------------
 
-INSERT INTO Credentials(Trader_id, Password)
+INSERT INTO Credentials(Trader_id, Password) VALUES
 	(1001,'rhiannon@2021'),
 	(1002,'simon@2395'),
 	(1003,'morgan#4005'),
@@ -36,7 +36,7 @@ INSERT INTO Credentials(Trader_id, Password)
 
 -------------------------------------------------------
 
-INSERT INTO NFT(Name, Smart_Contract_Address, Market_Price_Ethereum)
+INSERT INTO NFT(Name, Smart_Contract_Address, Market_Price_Ethereum) VALUES
 	('Artscape','0xC0DBF08d11AF53eb124196de13E3cFBab9B0a6c5',10000),
 	('Artholic','0xDec2E8F87bD7A40DFFb6b938E3CB5bd22a4eEA27',20000),
 	('Artex','0xd6Fdf78bfDF0bd2D7af307B4DbeABEeD9dDAb2B1',13000),
@@ -57,7 +57,7 @@ INSERT INTO NFT(Name, Smart_Contract_Address, Market_Price_Ethereum)
 
 -------------------------------------------------------
 
-INSERT INTO Owned_NFT(Trader_id, NFT_Token_ID, NFT_Name, Market_Price_Ethereum, Market_Price_USD)
+INSERT INTO Owned_NFT(Trader_id, NFT_Token_ID, NFT_Name, Market_Price_Ethereum, Market_Price_USD) VALUES
 	(1001,2001,'Artscape'10000,0),
 	(1003,2002,'Artholic',20000,0),
 	(1004,2013,'MicroNFT',11000,0),
@@ -74,7 +74,7 @@ INSERT INTO Owned_NFT(Trader_id, NFT_Token_ID, NFT_Name, Market_Price_Ethereum, 
 
 -------------------------------------------------------
 
-INSERT INTO Transaction(Ethereum_Value, Transaction_Date, Commission_Paid, Commission_Type, NFT_Token_ID, NFT_Address, Seller_Ethereum_Address, Buyer_Ethereum_Address)
+INSERT INTO Transaction(Ethereum_Value, Transaction_Date, Commission_Paid, Commission_Type, NFT_Token_ID, NFT_Address, Seller_Ethereum_Address, Buyer_Ethereum_Address) VALUES
 	(10000,2022-11-04,0.0,'USD',2001,'0xC0DBF08d11AF53eb124196de13E3cFBab9B0a6c5','0xd39dEE6Ef9daA18f2cdED6EC3fcF34143Ee2EeDa','0x0578cdfc3Ce9CafDBfd1efb6E7aAdBdDbD159fc5'),
 	(18000,2022-11-05,0.0,'USD',2013,'0x8eEcD46d49aCFcEDAF3892dfffF3E12a2d6ef0B5','0x62b27fEBda0FCAF9F9cC8Bd476cFeaFa5f5D37eC','0x25cB3b8de724E98d8d5dbE323FDf0CFD1fF77Df2'),
 	(20000,2022-11-07,0.0,'USD',2002,'0xDec2E8F87bD7A40DFFb6b938E3CB5bd22a4eEA27','0x62b27fEBda0FCAF9F9cC8Bd476cFeaFa5f5D37eC','0x0578cdfc3Ce9CafDBfd1efb6E7aAdBdDbD159fc5'),
@@ -95,7 +95,7 @@ INSERT INTO Transaction(Ethereum_Value, Transaction_Date, Commission_Paid, Commi
 
 -------------------------------------------------------
 
-INSERT INTO Payment(Amount_Paid, Payment_Address_Ethereum, Payment_Address_Bank, Payment_Date, Type, Trader_ID)
+INSERT INTO Payment(Amount_Paid, Payment_Address_Ethereum, Payment_Address_Bank, Payment_Date, Type, Trader_ID) VALUES
 	(120000,NULL,'',2022-10-01,'USD',1001),
 	(120000,NULL,'',2022-10-02,'USD',1002),
 	(120000,NULL,'',2022-10-03,'USD',1003),
