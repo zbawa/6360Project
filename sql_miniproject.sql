@@ -37,7 +37,7 @@ CREATE TABLE NFT(
 	NFT_Name VARCHAR(100) NOT NULL,
 	Smart_Contract_Address VARCHAR(255) NOT NULL,
 	Market_Price_Ethereum FLOAT NOT NULL,
-	Unique(Token_ID, Smart_Contract_Address)
+	Unique(Token_ID, Smart_Contract_Address),
 
 	PRIMARY KEY (Token_ID)
 );
