@@ -58,7 +58,7 @@ INSERT INTO NFT(NFT_Name, Smart_Contract_Address, Market_Price_Ethereum) VALUES
 -------------------------------------------------------
 
 INSERT INTO Owned_NFT(Trader_id, NFT_Token_ID, NFT_Name, Market_Price_Ethereum, Market_Price_USD) VALUES
-	(1001,2001,'Artscape'10000,0),
+	(1001,2001,'Artscape',10000,0),
 	(1003,2002,'Artholic',20000,0),
 	(1004,2013,'MicroNFT',11000,0),
 	(1002,2008,'Bitsy',2000,0),
