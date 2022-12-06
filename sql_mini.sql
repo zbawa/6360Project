@@ -262,3 +262,15 @@ WHERE 100000 > (
 -- execute both since only 1 will satisfy. I dont know how to if else in SQL
 
 -------------------------------------------------------
+
+-- Query to add Transaction to Deleted_Transaction Table if deleted within 15 mins
+
+INSERT INTO Deleted_Transaction
+SELECT *
+FROM Transaction Tr
+WHERE Tr.Transaction_ID = 70345 -- specify Transaction_ID of Transaction whose deleted is requested
+AND DATEDIFF(minute, Tr.Transaction_Date, CURRENT_TIMESTAMP) <= 15;
+
+-------------------------------------------------------
+
+
