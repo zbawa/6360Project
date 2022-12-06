@@ -68,15 +68,27 @@ app.get('/app/available-nfts/available-nfts.html', function (req, res) {
             result[0].Smart_Contract_Address + " \n" +
             result[0].Market_Price_Ethereum
         );
+		var availablenfts = new Array(10);
 
-        var trader1 = {
+        for (let i = 0, len = 10, text = ""; i < 10; i++) 
+        {
+            availablenfts[i] = {
+				tID: result[i].Token_ID,
+                nftName: result[i].NFT_Name,
+                smartContract: result[i].Smart_Contract_Address,
+                ethPrice: result[i].Market_Price_Ethereum,
+                            
+            }
+        }
+
+        /*var trader1 = {
             tID: result[0].Token_ID,
             nftName: result[0].NFT_Name,
             smartContract: result[0].Smart_Contract_Address,
             ethPrice: result[0].Market_Price_Ethereum,
-        }
+        }*/
         
-        res.render('available', { trader1 });
+        res.render('available', { traders:availablenfts });
     })
 });
 
