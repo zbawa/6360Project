@@ -291,29 +291,14 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>{{trader1.tID}}</td>
-                                            <td>{{trader1.nftName}}</td>
-                                            <td>{{trader1.smartContract}}</td>
-                                            <td>{{trader1.ethPrice}}</td>
+										     {{#each traders}}
+										</tr>
+                                            <td>{{tID}}</td>
+                                            <td>{{nftName}}</td>
+                                            <td>{{smartContract}}</td>
+                                            <td>{{ethPrice}}</td>
                                         </tr>
-                                        <tr>
-                                            <td>{{trader1.tID}}</td>
-                                            <td>{{trader1.nftName}}</td>
-                                            <td>{{trader1.smartContract}}</td>
-                                            <td>{{trader1.ethPrice}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>{{trader1.tID}}</td>
-                                            <td>{{trader1.nftName}}</td>
-                                            <td>{{trader1.smartContract}}</td>
-                                            <td>{{trader1.ethPrice}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>{{trader1.tID}}</td>
-                                            <td>{{trader1.nftName}}</td>
-                                            <td>{{trader1.smartContract}}</td>
-                                            <td>{{trader1.ethPrice}}</td>
-                                        </tr>
+										{{/each}}
                                     </tbody>
                                 </table>
                             </div>
