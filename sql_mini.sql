@@ -106,6 +106,13 @@ INSERT INTO Payment(Amount_Paid, Payment_Address_Ethereum, Payment_Address_Bank,
 	(120000,NULL,'','2022-10-10 00:00:00','USD',1006),
 	(120000,NULL,'','2022-10-11 00:00:00','USD',1009),
 	(120000,NULL,'','2022-10-15 00:00:00','USD',1010);
+	
+-------------------------------------------------------
+
+INSERT INTO Transaction_Log
+SELECT T.Trader_ID, Tr.NFT_Token_ID, Tr.Transaction_ID
+FROM Trader T, Transaction Tr
+WHERE Tr.Seller_Ethereum_Address = T.Ethereum_Address OR Tr.Buyer_Ethereum_Address = T.Ethereum_Address;
 
 --=====================================================
 
