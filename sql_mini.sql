@@ -174,12 +174,9 @@ FROM Address A;
 
 -- Trader Login using ID and Password(from credentials table) 
 
-SELECT C.Password, TR.Email
-FROM Credentials C, Trader TR
-WHERE C.Trader_ID = TR.Trader_ID AND C.Trader_ID = (SELECT T.Trader_ID
-                     				    FROM Trader T
-                     				    WHERE T.Email = 'simonparker455@gmail.com'
-                    				);
+SELECT T.Email, C.Password 
+FROM Trader T, Credentials C 
+WHERE T.Email = 'simonparker455@gmail.com' AND C.Password = 'simon@2395';
 -------------------------------------------------------
 
 -- Track transaction volume and 2.Trader dashboard to display all NFTs available + NFTs owned by Trader 
