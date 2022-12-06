@@ -54,7 +54,7 @@ app.get('/app/home/home.html', (req, res) => {
             ethPrice: result[0].Market_Price_Ethereum,
             usdPrice: result[0].Market_Price_USD
         }
-        
+
         res.render('home', { trader1 });
     })
 });
@@ -68,16 +68,15 @@ app.get('/app/available-nfts/available-nfts.html', function (req, res) {
             result[0].Smart_Contract_Address + " \n" +
             result[0].Market_Price_Ethereum
         );
-		var availablenfts = new Array(10);
+        var availablenfts = new Array(10);
 
-        for (let i = 0, len = 10, text = ""; i < 10; i++) 
-        {
+        for (let i = 0, len = 10, text = ""; i < 10; i++) {
             availablenfts[i] = {
-				tID: result[i].Token_ID,
+                tID: result[i].Token_ID,
                 nftName: result[i].NFT_Name,
                 smartContract: result[i].Smart_Contract_Address,
                 ethPrice: result[i].Market_Price_Ethereum,
-                            
+
             }
         }
 
@@ -87,8 +86,8 @@ app.get('/app/available-nfts/available-nfts.html', function (req, res) {
             smartContract: result[0].Smart_Contract_Address,
             ethPrice: result[0].Market_Price_Ethereum,
         }*/
-        
-        res.render('available', { traders:availablenfts });
+
+        res.render('available', { traders: availablenfts });
     })
 });
 
@@ -97,31 +96,30 @@ app.get('/app/features/history.html', function (req, res) {
     con.query(sql, function (err, result, fields) {
         if (err) throw err;
         console.log(result);
-        res.get(result[0].Ethereum_Value + " \n" + 
+        res.get(result[0].Ethereum_Value + " \n" +
             result[0].Transaction_Date + " \n" +
             result[0].Commission_Paid + " \n" +
             result[0].Commission_Type + " \n" +
             result[0].NFT_Token_ID + " \n" +
             result[0].NFT_Address + " \n" +
             result[0].Seller_Ethereum_Address + " \n" +
-            result[0].Buyer_Ethereum_Address 
+            result[0].Buyer_Ethereum_Address
         );
         var traders = new Array(10);
 
-        for (let i = 0, len = 10, text = ""; i < 10; i++) 
-        {
+        for (let i = 0, len = 10, text = ""; i < 10; i++) {
             traders[i] = {
-                eth_val:    result[i].Ethereum_Value,
+                eth_val: result[i].Ethereum_Value,
                 trans_date: result[i].Transaction_Date,
                 comm_paid: result[i].Commission_Paid,
                 comm_type: result[i].Commission_Type,
                 nft_id: result[i].NFT_Token_ID,
                 nft_addr: result[i].NFT_Address,
                 seller_eth_addr: result[i].Seller_Ethereum_Address,
-                buyer_eth_addr: result[i].Buyer_Ethereum_Address,                
+                buyer_eth_addr: result[i].Buyer_Ethereum_Address,
             }
         }
-       res.render('history', {traders:traders});
+        res.render('history', { traders: traders });
 
     })
 });

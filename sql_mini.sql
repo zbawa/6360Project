@@ -122,7 +122,7 @@ WHERE Tr.Seller_Ethereum_Address = T.Ethereum_Address OR Tr.Buyer_Ethereum_Addre
 
 -- To pull all the NFTs owned by the trader 
 
-SELECT Token_ID, NFT_Name, Market_Price_Ethereum
+SELECT Trader_ID, NFT_Name, Market_Price_Ethereum
 FROM Owned_NFT 
 WHERE Owned_NFT.Trader_id = 'given_trader_id';
 -------------------------------------------------------
