@@ -1,0 +1,9 @@
+drop table deleted_transaction;
+drop table transaction_log;
+drop table transaction;
+drop table owned_nft;
+drop table nft;
+drop table payment;
+drop table credentials;
+drop table address;
+drop table trader;
