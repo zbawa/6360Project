@@ -30,10 +30,10 @@ con.connect(function (err) {
 })
 
 app.get('/app/home/home.html', (req, res) => {
-    var sql = "SELECT * FROM Trader, owned_nft";
-
+    var sql = "SELECT * FROM Trader, owned_nft WHERE EMAIL=?";
     if (req.session.loggedin) {
-        con.query(sql, function (err, result, fields) {
+        var traderEmail = req.session.username;
+        con.query(sql, [traderEmail], function (err, result, fields) {
             if (err) throw err;
             console.log(result);
             res.get(result[0].Trader_ID + " \n" + result[0].First_Name + " \n" +
