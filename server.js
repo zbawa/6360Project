@@ -17,9 +17,9 @@ var con = mysql.createConnection({
 });
 
 app.use(session({
-	secret: 'secret',
-	resave: true,
-	saveUninitialized: true
+    secret: 'secret',
+    resave: true,
+    saveUninitialized: true
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -36,21 +36,41 @@ app.get('/app/home/home.html', (req, res) => {
         con.query(sql, [traderEmail], function (err, result, fields) {
             if (err) throw err;
             console.log(result);
-            res.get(result[0].Trader_ID + " \n" + result[0].First_Name + " \n" +
-                result[0].Last_Name + " \n" +
-                result[0].Email + " \n" +
-                result[0].Phone_Number + " \n" +
-                result[0].Cellphone_Number + " \n" +
-                result[0].Ethereum_Amount + " " +
-                result[0].Ethereum_Address + " \n" +
-                result[0].Tier + " \n" +
+            res.get(
                 result[0].NFT_Token_ID + " \n" +
                 result[0].NFT_Name + " \n" +
                 result[0].Market_Price_Ethereum + " \n" +
-                result[0].Market_Price_USD
+                result[0].Market_Price_USD + " \n" +
+                result[0].Trader_ID + " \n" +
+                result[0].First_Name + " \n" +
+                result[0].Last_Name + " \n" +
+                result[0].Email + " \n" +
+                result[0].Ethereum_Amount + " \n" +
+                result[0].Tier
             );
-    
-            var trader1 = {
+
+
+            //console.log(result[0].NFT_Token_ID);
+            //console.log(result[0].NFT_Name);
+            //console.log(result[0].Market_Price_Ethereum);
+            //console.log(result[0].Market_Price_USD);
+            //console.log(result[0].Trader_ID);
+            //console.log(result[0].First_Name);
+            //console.log(result[0].Last_Name);
+
+
+            var trader1 = new Array(10);
+
+            for (let i = 0, len = 10, text = ""; i < 10; i++) {
+                trader1[i] = {
+                    nftTokenID: result[i].NFT_Token_ID,
+                    nftName: result[i].NFT_Name,
+                    ethPrice: result[i].Market_Price_Ethereum,
+                    usdPrice: result[i].Market_Price_USD
+                }
+            }
+
+            var trader2 = {
                 tID: result[0].Trader_ID,
                 fName: result[0].First_Name,
                 lName: result[0].Last_Name,
@@ -59,16 +79,13 @@ app.get('/app/home/home.html', (req, res) => {
                 cell: result[0].Cellphone_Number,
                 wallet: result[0].Ethereum_Amount,
                 address: result[0].Ethereum_Address,
-                tier: result[0].Tier,
-                nftTokenID: result[0].NFT_Token_ID,
-                nftName: result[0].NFT_Name,
-                ethPrice: result[0].Market_Price_Ethereum,
-                usdPrice: result[0].Market_Price_USD
+                tier: result[0].Tier
             }
-    
-            res.render('home', { trader1 });
+
+            res.render('home', { trader1, trader2 });
+
         })
-    }   
+    }
 });
 
 app.get('/app/available-nfts/available-nfts.html', function (req, res) {
@@ -137,33 +154,33 @@ app.get('/app/features/history.html', function (req, res) {
 });
 
 
-app.post('/auth', function(request, response) {
-	// Capture the input fields
-	let username = request.body.username;
-	let password = request.body.password;
+app.post('/auth', function (request, response) {
+    // Capture the input fields
+    let username = request.body.username;
+    let password = request.body.password;
     console.log(username);
-	// Ensure the input fields exists and are not empty
-	if (username && password) {
-		// Execute SQL query that'll select the account from the database based on the specified username and password
-		con.query('SELECT T.Email, C.Password  FROM Trader T, Credentials C WHERE T.Email = ? AND C.Password = ?', [username, password], function(error, results, fields) {
-			// If there is an issue with the query, output the error
-			if (error) throw error;
-			// If the account exists
-			if (results.length > 0) {
-				// Authenticate the user
-				request.session.loggedin = true;
-				request.session.username = username;
-				// Redirect to home page
-				response.redirect('/app/home/home.html');
-			} else {
-				response.send('Incorrect Username and/or Password!');
-			}			
-			response.end();
-		});
-	} else {
-		response.send('Please enter Username and Password!');
-		response.end();
-	}
+    // Ensure the input fields exists and are not empty
+    if (username && password) {
+        // Execute SQL query that'll select the account from the database based on the specified username and password
+        con.query('SELECT T.Email, C.Password  FROM Trader T, Credentials C WHERE T.Email = ? AND C.Password = ?', [username, password], function (error, results, fields) {
+            // If there is an issue with the query, output the error
+            if (error) throw error;
+            // If the account exists
+            if (results.length > 0) {
+                // Authenticate the user
+                request.session.loggedin = true;
+                request.session.username = username;
+                // Redirect to home page
+                response.redirect('/app/home/home.html');
+            } else {
+                response.send('Incorrect Username and/or Password!');
+            }
+            response.end();
+        });
+    } else {
+        response.send('Please enter Username and Password!');
+        response.end();
+    }
 });
 
 app.get('/', function (req, res) {
