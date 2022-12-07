@@ -59,10 +59,10 @@ app.get('/app/home/home.html', (req, res) => {
             //console.log(result[0].Last_Name);
 
 
-            var trader1 = new Array(10);
+            var ownedNFT = new Array(10);
 
             for (let i = 0, len = 10, text = ""; i < 10; i++) {
-                trader1[i] = {
+                ownedNFT[i] = {
                     nftTokenID: result[i].NFT_Token_ID,
                     nftName: result[i].NFT_Name,
                     ethPrice: result[i].Market_Price_Ethereum,
@@ -70,7 +70,7 @@ app.get('/app/home/home.html', (req, res) => {
                 }
             }
 
-            var trader2 = {
+            var traderInfo = {
                 tID: result[0].Trader_ID,
                 fName: result[0].First_Name,
                 lName: result[0].Last_Name,
@@ -82,7 +82,7 @@ app.get('/app/home/home.html', (req, res) => {
                 tier: result[0].Tier
             }
 
-            res.render('home', { trader1, trader2 });
+            res.render('home', { ownedNFT, traderInfo });
 
         })
     }
