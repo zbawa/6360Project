@@ -229,8 +229,8 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{trader1.fName}}
-                                    {{trader1.lName}}</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{trader2.fName}}
+                                    {{trader2.lName}}</span>
                                 <img class="img-profile rounded-circle" src="../../assets/img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
@@ -280,7 +280,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 Wallet</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{trader1.wallet}}</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{trader2.wallet}}</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -298,7 +298,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                                 Current Status</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{trader1.tier}}</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{trader2.tier}}</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-star fa-2x text-gray-300"></i>
@@ -333,29 +333,14 @@
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td>{{trader1.nftTokenID}}</td>
-                                                    <td>{{trader1.nftName}}</td>
-                                                    <td>{{trader1.usdPrice}}</td>
-                                                    <td>{{trader1.ethPrice}}</td>
+                                                    {{#each trader1}}
                                                 </tr>
-                                                <tr>
-                                                    <td>{{trader1.nftTokenID}}</td>
-                                                    <td>{{trader1.nftName}}</td>
-                                                    <td>{{trader1.usdPrice}}</td>
-                                                    <td>{{trader1.ethPrice}}</td>
+                                                <td>{{nftTokenID}}</td>
+                                                <td>{{nftName}}</td>
+                                                <td>{{ethPrice}}</td>
+                                                <td>{{usdPrice}}</td>
                                                 </tr>
-                                                <tr>
-                                                    <td>{{trader1.nftTokenID}}</td>
-                                                    <td>{{trader1.nftName}}</td>
-                                                    <td>{{trader1.usdPrice}}</td>
-                                                    <td>{{trader1.ethPrice}}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>{{trader1.nftTokenID}}</td>
-                                                    <td>{{trader1.nftName}}</td>
-                                                    <td>{{trader1.usdPrice}}</td>
-                                                    <td>{{trader1.ethPrice}}</td>
-                                                </tr>
+                                                {{/each}}
                                             </tbody>
                                         </table>
                                         <a href="../available-nfts/available-nfts.html"
